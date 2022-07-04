@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup( 
-    name= 'Packages',
+    name= 'Sintentizador',
     version= '0.0.1',
-    packages= find_packages(where= '.', include = ["Packages*"])
+    packages= find_packages(where= '.', include = ["Sintetizador*"])
 )
