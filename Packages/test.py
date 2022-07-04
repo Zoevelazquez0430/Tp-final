@@ -1,6 +1,5 @@
-from fileinput import filename
 import pytest
-import note1 as note
+import principal_file as note
 import funciones
 import test_instrumento_1 as inst_1
 nota=note.Note("name", 1000, 10, 0)
