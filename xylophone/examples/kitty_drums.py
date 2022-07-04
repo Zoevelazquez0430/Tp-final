@@ -1,5 +1,3 @@
-#/usr/bin/env python
-
 from xylophone.client import XyloClient
 from xylophone.xylo import XyloNote
 
@@ -18,7 +16,7 @@ if __name__ == '__main__':
             XyloNote('C7', 10.01, 90),
             ]
 
-    client = XyloClient(host='localhost', port=8080)
+    client = XyloClient(host='10.42.0.1', port=8080)
     client.load(notes)
     client.play()
 
