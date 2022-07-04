@@ -1,0 +1,3 @@
+[submodule "xylophone"]
+	path = xylophone
+	url = https://github.com/udesa-ai/xylophone.git
