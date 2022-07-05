@@ -20,3 +20,4 @@ def test_get_sinuoidal():
     assert np.array_equal(test_note.get_sinuoidal()[1], y)
     
     
+    

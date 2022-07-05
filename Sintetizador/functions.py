@@ -126,7 +126,7 @@ def log(t,param):
     param param: Pass the parameters of the log function
     return: The natural logarithm of the input
     """
-    M= np.log(((-9*t)/param[0])+1)
+    M= np.log(((9*t)/param[0])+1)
     return M
 
 def invlog(t,param):
@@ -159,6 +159,7 @@ def tri(t, param):
         M=(t*param[2])/param[1]
     else:
         M=((t-param[1])/(param[1]-param[0]))+ param[2]
+    return M
     
 def pulses(t, param):
     """ 
@@ -168,3 +169,4 @@ def pulses(t, param):
     """
     m= (t/param[0]) - np.floor(t/param[0])
     M= np.min(abs(((1-param[2])/param[1])*(m-param[0]+param[1]))+param[2])
+    return M
