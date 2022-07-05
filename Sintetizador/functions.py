@@ -7,15 +7,13 @@ def constant(t, param):
     
     param t: Determine the time at which the function is evaluated
     param param: Define the constant value that will be returned
-    return: Whatever is passed to it
+    return: int 
     """
     return 1
 
 def linear(t, param):
     """
-    The linear function takes a scalar t as input and returns a vector of shape (2,) as output.
-    The output can be written as [a + bt, ct].
-    This function is used to compute the linear velocity of the car for each timestep.
+    The linear function takes a scalar t as input 
     
     param t: Scale the time
     param param: Scale the output of the linear function
@@ -40,8 +38,6 @@ def invlinear(t, param):
 def sin(t, param):
     """
     The sin function takes a time t and a parameter par and returns the value of sin(t*par).
-       The parameter par is usually called 'omega' but I (Dylan) dislike the name 'parameter' so I 
-       have relabeled it as 'par'. 
     
     param t: Represent the time, and param is used to represent the amplitude of the sin function
     param param: Control the amplitude of the wave
@@ -54,10 +50,6 @@ def exp (t, param):
     """
     The exp function takes a parameter t and returns the value of e**t.
     The function is useful for computing values of an exponential curve.
-    For example, if you have a dataset that looks like this:
-    t     y(t) 
-    0 1   0.5 
-    2
     
     param t: Define the time point at which the function is evaluated
     param param: Pass the parameters of the exponential function
@@ -82,7 +74,6 @@ def invexp(t,param):
 def quartcos(t,param):
     """
     The quartcos function returns the cosine of a variable t multiplied by a quartic polynomial.
-       The quartic polynomial is determined by coefficients in param: param[0]*t**4 + param[2]*t**2 + param[3].
     
     param t: Define the time of the function
     param param: Define the amplitude of the cosine function
@@ -107,9 +98,7 @@ def quartsin(t,param):
 
 def halfcos(t,param):
     """
-    The halfcos function returns the value of a half-cosine function with amplitude 1 and period T.  The function is computed as follows:
-        cos(pi*t/T) - 1/2
-    where t is a time vector, T is the period (in seconds), and pi = 3.14159...
+    The halfcos function returns the value of a half-cosine function with amplitude 1 and period T.  
     
     param t: Define the time at which the function is evaluated
     param param: Set the amplitude of the wave
@@ -133,7 +122,6 @@ def halfsin(t,param):
 def log(t,param):
     """
     The log function takes a parameter t and returns the natural log of that value.
-       For example, if t = 2.0 then log(t) = 0.6931471805599453
     
     param t: Scale the function
     param param: Pass the parameters of the log function
@@ -145,13 +133,12 @@ def log(t,param):
 def invlog(t,param):
     """
     The invlog function is a function that takes in a time and parameter, 
-    and returns the value of the inverse logistic function. The inverse logistic 
-    is used to model population growth where there is an asymptote at 0. It has 
-    a characteristic S-shaped curve which starts off slowly then increases rapidly
+    and returns the value of the inverse logistic function. 
     
     param t: Calculate the m value
     param param: Determine the value of m
-    return: A value of -9 for all values of t that are less than the parameter, and 0 for all values greater than or equal to the parameter
+    return: A value of -9 for all values of t that are less than the parameter,
+    and 0 for all values greater than or equal to the parameter
     """
     if t<param:
         M= np.log(((-9*t)/param[0])+10)
@@ -163,11 +150,11 @@ def tri(t, param):
     """
     The tri function returns the value of a triangle function with parameters: 
         t (time), param[0] (midpoint), param[2] (height) and param[3] (width). 
-        The tri function is used to generate an action potential train. 
+ 
     
     param t: Determine the position of the point on the line
     param param: Define the parameters of the function
-    return: The value of m, which is the mass in grams of a single bacterium
+    return: The value of m
     """
     if t< param[1]:
         M=(t*param[2])/param[1]
@@ -175,9 +162,7 @@ def tri(t, param):
         M=((t-param[1])/(param[1]-param[0]))+ param[2]
     
 def pulses(t, param):
-    """
-    The pulses function returns a 1 if the time is in the first 25% of its period, and -0.5 otherwise.
-    
+    """ 
     param t: Define the time of the pulse
     param param: Define the pulse shape
     return: The value of the pulse function at a given time

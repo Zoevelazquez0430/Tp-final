@@ -23,12 +23,7 @@ class Sintetizer():
     def set_times(self, attack_t, decay_t):
         """
         The set_times function sets the attack and decay times for the envelope.
-        
-        Args:
-            attack_t (float): The time in seconds of the envelope's attack phase. 
-            decay_t (float): The time in seconds of the envelope's decay phase. 
-        
-        
+                
         param self: Access the variables and methods of the class in python
         param attack_t: Set the time it takes for the sound to reach its maximum volume
         param decay_t: Set the duration of the decay phase
@@ -78,8 +73,7 @@ class Sintetizer():
     def modulator(self,t, y, functions, note ):
         """
         The modulator function takes in a time vector, a function vector, and an instrument object. It then uses the 
-        instrument's attack_t and decay_t attributes to create an envelope for the given note. The envelope is created by 
-        using three functions from the dictionary dic: CONSTANT, LINEAR,
+        instrument's attack_t and decay_t attributes to create an envelope for the given note.
         
         param self: Access variables that belongs to the class
         param t: Generate the time vector
@@ -127,11 +121,6 @@ class Sintetizer():
         """
         The add_sinu function adds a sinusoidal wave to the signal.
         
-        Parameters:
-            multiples (list): A list of integers that represent the number of times 
-                each note is played. For example, if multiples = [2, 3], then every 
-                other note will be repeated twice and every
-        
         param self: Access variables that belongs to the class
         return: None
         """
@@ -166,9 +155,10 @@ class Sintetizer():
 
     def read_sheet(self, filename: str) -> List[Tuple]:
         """
-        The read_sheet function reads a file and returns a list of tuples containing the start time, end time, and note name for each note in the file.
+        The read_sheet function reads a file and returns a list of tuples containing the start time,
+        end time, and note name for each note in the file.
         
-        param self: Access variables that belong to the class (e
+        param self: Access variables that belong to the class
         param filename:str: Specify the name of the file that contains the sheet
         return: A list of tuples
         """
@@ -187,10 +177,8 @@ class Sintetizer():
     def notes_maker(self) ->None:
         """
         The notes_maker function prints out the notes in a list of tuples.
-           The function takes no parameters and returns nothing.
         
         param self: Access variables that belongs to the class
-        return: None
         """
         notas = self.read_sheet(self.sheet)
         for note in notas:
@@ -215,7 +203,7 @@ class Sintetizer():
         The total_duration function returns the total duration of a NoteList object.
         
         param self: Access the attributes and methods of the class in python
-        return: The total duration of the instrument
+        return: The total duration of the song
         """
         duration = 0
         for note in self.notes_list:

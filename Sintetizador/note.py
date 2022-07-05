@@ -12,10 +12,8 @@ class Note(object):
 
     def get_frecuency(self) -> float:
         """
-        The get_frecuency function returns the number of times a word appears in a text.
-        
         param self: Access the attributes and methods of the class in python
-        return: The number of times a character appears in the string
+        return: The frequency of the note
         """
         return self.frecuency
 
@@ -30,7 +28,7 @@ class Note(object):
     
     def get_start(self) -> float:
         """
-        The get_start function returns the start position of the current node.
+        The get_start function returns the start position of the current note.
         
         param self: Access the attributes and methods of the class in python
         return: start point of the note
@@ -73,7 +71,7 @@ class Note(object):
 
     def __str__(self) -> str:
         """
-        The __str__ function is called when an instance of the class is printed. It returns a string representation of the object, which can be used for debugging and logging.
+        The __str__ function is called when an instance of the class is printed. 
         
         param self: Refer to the object itself
         return: The string representation of the object
@@ -88,7 +86,7 @@ class Note(object):
         
         param self: Refer to the object itself
         param note:Note: Compare the start time of two notes
-        return: True if the start of self is greater than the start of note, or if their starts are equal and self has a longer duration
+        return: A boolean value
         """
         if isinstance(note, Note):
             if self.get_start() > note.get_start():
@@ -106,7 +104,7 @@ class Note(object):
         
         param self: Refer to the object itself
         param note:Note: Compare the start time of two notes
-        return: True if the start time of this note is less than the start time of the given note, and false otherwise
+        return: A boolean value
         """
         if isinstance(note, Note):
             if self.get_start() < note.get_start():
