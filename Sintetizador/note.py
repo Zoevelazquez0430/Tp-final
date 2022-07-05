@@ -114,4 +114,10 @@ class Note(object):
             elif self.get_start() == note.get_start():
                 if self.get_duration() < note.get_duration():
                     return True
-        return False            
+        return False           
+    def __repr__(self) -> str:
+        """        
+        param self: Refer to the instance of the class
+        return: The string representation of the object
+        """
+        return self.name

@@ -2,12 +2,12 @@ from __future__ import annotations
 import wave
 from matplotlib import pyplot as plt
 import numpy as np
-from note import Note
-from notes import notes_mapping
+from Sintetizador.note import Note
+from Sintetizador.notes import notes_mapping
 from typing import List, Tuple
 from scipy.io.wavfile import write
 import matplotlib.pyplot as plt
-from functions import *
+from Sintetizador.functions import *
 
 class Sintetizer():
     def __init__(self, sample_rate: int,  instrument: str, sheet: str, wave_file) -> None:
@@ -243,9 +243,4 @@ class Sintetizer():
             index_inicio = np.where(np.isclose(t, t_nota[0],(1/self.sample_rate), 1/self.sample_rate))[0][0]
             y[index_inicio : index_inicio + len(y_nota)] += y_nota
 
-        y[y<-1]= -1
-        y[y>1]= 1
         write(self.wave_file, self.sample_rate, y)
-
-sinte = Sintetizer(44100, 'oboe.txt', 'gravity_falls.txt', 'Viva_la_vida.wav' )
-sinte.generate_track()

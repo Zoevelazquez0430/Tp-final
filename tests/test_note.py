@@ -1,4 +1,4 @@
-from Packages.note import Note
+from Sintetizador.note import Note
 import numpy as np
 
 test_note = Note("A4", '440.000', '1.0', '0.0')
@@ -18,4 +18,5 @@ def test_get_sinuoidal():
     test_note.set_sinuoidal(t, y)
     assert np.array_equal(test_note.get_sinuoidal()[0], t)
     assert np.array_equal(test_note.get_sinuoidal()[1], y)
+    
     
