@@ -3,7 +3,7 @@ In this repository you will find differents files which are part of a one big pr
 The repository has three big directories: Synthetizer, xylophone.
 In Synthetizer directory you'll find the main files, the ones able to be run and the construction files (from classes to functions). The xylophone directory has all te files and extensions to work with the xylophone and the xilo_reader has specific files to correctly read music scores and filter the notes that the xylophone is able to receive.
 
-In order to use this repository the user has to introduce in any console, a sample frequency, the instrument text, then the music score and finally the wav file where the audio is saved. 
+In order to use this repository the user has to introduce in any console, a sample frequency, the instrument text, then the music score and finally the wav file where the audio is saved. Remember that is a necessary condition to be inside the sintetizador directory in order to be able to use this parser.
 
 ```shell
 python .\main.py -f <frequency> -i <instrument> -p <score> -o <audio.wav>
