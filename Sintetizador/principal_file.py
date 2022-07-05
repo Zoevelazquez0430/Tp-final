@@ -1,12 +1,9 @@
 from __future__ import annotations
-import wave
-from matplotlib import pyplot as plt
 import numpy as np
 from note import Note
 from notes import notes_mapping
 from typing import List, Tuple
 from scipy.io.wavfile import write
-import matplotlib.pyplot as plt
 from functions import *
 
 class Sintetizer():
