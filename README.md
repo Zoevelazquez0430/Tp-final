@@ -5,11 +5,15 @@ In Synthetizer directory you'll find the main files, the ones able to be run and
 
 In order to use this repository the user has to introduce in any console, a sample frequency, the instrument text, then the music score and finally the wav file where the audio is saved. 
 
+```shell
 python .\main.py -f <frequency> -i <instrument> -p <score> -o <audio.wav>
+```
 
 And for the xylophone the user has to write in the console -> the music score and the device. 
 
+```shell
 python -\main.py -p <score> -d <device>
+```
 
 ## Installation
 
