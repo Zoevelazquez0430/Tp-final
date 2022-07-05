@@ -2,18 +2,18 @@ from __future__ import annotations
 import wave
 from matplotlib import pyplot as plt
 import numpy as np
-from Sintetizador.note import Note
-from Sintetizador.notes import notes_mapping
+from note import Note
+from notes import notes_mapping
 from typing import List, Tuple
 from scipy.io.wavfile import write
 import matplotlib.pyplot as plt
-from Sintetizador.functions import *
+from functions import *
 
 class Sintetizer():
-    def __init__(self, sample_rate: int,  instrument: str, sheet: str, wave_file) -> None:
-        self.sample_rate = sample_rate
+    def __init__(self, sample_rate: int,  instrument: str, score: str, wave_file) -> None:
+        self.sample_rate = int(sample_rate)
         self.instrument_info = instrument
-        self.sheet= sheet
+        self.sheet= score
         self.wave_file= wave_file
         self.notes_list= []
         self.attack_t = None
@@ -122,7 +122,6 @@ class Sintetizer():
             note.set_sinuoidal(t,y)
             print(note)
             y2 += y
-        write('test_2.wav', 44100, y)  
         
     def add_sinu(self) -> None:
         """
@@ -225,7 +224,7 @@ class Sintetizer():
                 duration = aux_duration
         return duration
 
-    def generate_track(self):
+    def generate_track(self, file_to_make, sample_rate):
         """
         The generate_track function generates a track from the list of notes.
         It adds all the sinuosities and then it sums them up.
@@ -238,9 +237,8 @@ class Sintetizer():
         y = np.zeros(len(t))
 
         for note in self.notes_list:
-            
             t_nota, y_nota = note.get_sinuoidal()
             index_inicio = np.where(np.isclose(t, t_nota[0],(1/self.sample_rate), 1/self.sample_rate))[0][0]
             y[index_inicio : index_inicio + len(y_nota)] += y_nota
 
-        write(self.wave_file, self.sample_rate, y)
+        write(file_to_make, int(sample_rate), y)

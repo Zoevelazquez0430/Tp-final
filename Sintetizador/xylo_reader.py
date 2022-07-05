@@ -1,4 +1,5 @@
-from xylophone.xylo import XyloNote
+from xylophone.xylophone.xylo import XyloNote
+#agregar lo hecho en la compu de bryan
 
 def xilo_sheet_reader(filename):
         with open(filename, "r") as fd:      
@@ -12,5 +13,3 @@ def xilo_sheet_reader(filename):
                 xiloNote= XyloNote(note,start,velocity)
                 notesxilo.append(xiloNote)
             return notesxilo
-
-
