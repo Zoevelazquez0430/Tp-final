@@ -1,6 +1,6 @@
 from fileinput import filename
 from xylophone.client import XyloClient
-from xylophone.xylo_reader import xilo_sheet_reader
+from xylo_reader import xilo_sheet_reader
 import argparse
 
 parser = argparse.ArgumentParser(description='metalofono')
@@ -16,5 +16,5 @@ notes = xilo_sheet_reader(score)
 client = XyloClient(device, port)
 
 if __name__ == '__main__':
-    client.load()
+    client.load(notes)
     client.play()
