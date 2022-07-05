@@ -9,7 +9,7 @@ In order to use this repository the user has to introduce in any console, a samp
 python .\main.py -f <frequency> -i <instrument> -p <score> -o <audio.wav>
 ```
 
-And for the xylophone the user has to write in the console -> the music score and the device. 
+And for the xylophone the user has to write in the console -> the music score and the device. Remember that is a necessary condition to be inside the xylophone directory in order to be able to use this parser.
 
 ```shell
 python -\main.py -p <score> -d <device>
